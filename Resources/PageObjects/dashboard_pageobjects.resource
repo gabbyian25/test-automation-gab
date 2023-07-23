@@ -1,5 +1,7 @@
 **Variables***
 
 ### MAIN NAVIGATION ###
-${logout_link}      //*[@id="root"]/div/div/div/a
-${account}          //span[text()='account']
+${logout_link}                          //a[text()='Logout']
+${account_link}                         //span[text()='account']
+
+${restartPlan_link}                     //a[text()='Restart plan']
