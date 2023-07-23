@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.10.11 on win32)" generated="20230723 23:51:57.707" rpa="false" schemaversion="4">
+<suite id="s1" name="Test" source="D:\test-automation-gab\TestCases\test.robot">
+<kw name="Open a Browser" library="global_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230723 23:51:57.908" level="INFO">Opening browser 'chrome' to base url 'https://www.amaysim.com.au/my-account/my-amaysim/services'.</msg>
+<status status="PASS" starttime="20230723 23:51:57.908" endtime="20230723 23:52:08.910"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230723 23:52:08.911" endtime="20230723 23:52:09.030"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${username_textbox}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230723 23:52:09.030" endtime="20230723 23:52:09.055"/>
+</kw>
+<status status="PASS" starttime="20230723 23:51:57.907" endtime="20230723 23:52:09.055"/>
+</kw>
+<test id="s1-t1" name="Login to Ameysim" line="11">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_textbox}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230723 23:52:09.056" level="INFO">Typing text '0466134574' into text field '//input[@id='username']'.</msg>
+<status status="PASS" starttime="20230723 23:52:09.056" endtime="20230723 23:52:09.144"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_textbox}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230723 23:52:09.145" level="INFO">Typing text 'AWqasde321' into text field '//input[@id='password']'.</msg>
+<status status="PASS" starttime="20230723 23:52:09.144" endtime="20230723 23:52:09.230"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${login_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230723 23:52:09.232" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20230723 23:52:09.232" endtime="20230723 23:52:09.299"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230723 23:52:14.304" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230723 23:52:09.299" endtime="20230723 23:52:14.304"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${logout_link}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230723 23:52:16.134" level="INFO">Element '//a[text()='Logout']' is displayed.</msg>
+<status status="PASS" starttime="20230723 23:52:14.304" endtime="20230723 23:52:16.134"/>
+</kw>
+<doc>This is the Keyword for Logging in to Ameysim</doc>
+<status status="PASS" starttime="20230723 23:52:09.055" endtime="20230723 23:52:16.134"/>
+</test>
+<test id="s1-t2" name="User should be able to go to Refer a Friend" line="20">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${restartPlan_link}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230723 23:52:16.136" endtime="20230723 23:52:16.157"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${restartPlan_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230723 23:52:16.158" level="INFO">Clicking element '//a[text()='Restart plan']'.</msg>
+<status status="PASS" starttime="20230723 23:52:16.158" endtime="20230723 23:53:13.364"/>
+</kw>
+<kw name="Wait Until Location Is Not" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the current URL is not ``location``.</doc>
+<status status="PASS" starttime="20230723 23:53:13.365" endtime="20230723 23:53:13.389"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${referAFriend_Link}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230723 23:53:13.389" endtime="20230723 23:53:13.458"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${referAFriend_Link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230723 23:53:13.459" level="INFO">Clicking element '//a[text()='Refer a friend']'.</msg>
+<status status="PASS" starttime="20230723 23:53:13.459" endtime="20230723 23:53:13.536"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${loading_logo}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20230723 23:53:13.537" endtime="20230723 23:53:13.555"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>30s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230723 23:53:43.567" level="INFO">Slept 30 seconds</msg>
+<status status="PASS" starttime="20230723 23:53:13.555" endtime="20230723 23:53:43.567"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>${referAFriend_window}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20230723 23:53:43.568" level="INFO">Selecting frame '//iframe[@title='Powered By Friendbuy']'.</msg>
+<status status="PASS" starttime="20230723 23:53:43.567" endtime="20230723 23:53:43.592"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>20s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230723 23:54:03.598" level="INFO">Slept 20 seconds</msg>
+<status status="PASS" starttime="20230723 23:53:43.592" endtime="20230723 23:54:03.598"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${referAFriend_email}</arg>
+<arg>${referAFriend_email_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230723 23:54:03.599" level="INFO">Typing text 'test@email.com' into text field '//input[@id='a']'.</msg>
+<status status="PASS" starttime="20230723 23:54:03.598" endtime="20230723 23:54:03.776"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${referAFriend_message_textArea}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230723 23:54:03.777" endtime="20230723 23:54:03.814"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${referAFriend_message_textArea}</arg>
+<arg>${referAFriend_message_value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230723 23:54:03.815" level="INFO">Typing text 'This is Gabriel Ian Jose. This is a Automation Test.' into text field '//textarea[@id='b']'.</msg>
+<status status="PASS" starttime="20230723 23:54:03.814" endtime="20230723 23:54:04.189"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${referAFriend_Share_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230723 23:54:04.190" level="INFO">Clicking button '//button[@id='c']'.</msg>
+<status status="PASS" starttime="20230723 23:54:04.189" endtime="20230723 23:54:04.291"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230723 23:54:09.299" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230723 23:54:04.291" endtime="20230723 23:54:09.299"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${referAFriend_ThankYouMessage}</arg>
+<arg>${referAFriend_ThankYouMessage_value}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230723 23:54:09.300" level="INFO">Verifying element '//div[@id='H']' contains exact text 'THANKS FOR SHARING THE BIG LOVE'.</msg>
+<status status="PASS" starttime="20230723 23:54:09.299" endtime="20230723 23:54:09.319"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20230723 23:54:09.320" endtime="20230723 23:54:09.321"/>
+</kw>
+<doc>This covers how User goes to Refer a Friend</doc>
+<status status="PASS" starttime="20230723 23:52:16.135" endtime="20230723 23:54:09.321"/>
+</test>
+<test id="s1-t3" name="User should be able to View Plan Details" line="39">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${managePlan_link}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230723 23:54:09.343" level="INFO">Element '//a[text()='Manage plan']' is displayed.</msg>
+<status status="PASS" starttime="20230723 23:54:09.323" endtime="20230723 23:54:09.343"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${managePlan_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230723 23:54:09.344" level="INFO">Clicking element '//a[text()='Manage plan']'.</msg>
+<status status="PASS" starttime="20230723 23:54:09.344" endtime="20230723 23:54:09.396"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${managePlan_url}</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20230723 23:54:09.397" endtime="20230723 23:54:43.761"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${managePlan_Heading}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230723 23:54:43.762" endtime="20230723 23:54:43.811"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${managePlan_Heading}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230723 23:54:43.827" level="INFO">Element '//div[@class='ama-page-header']' is displayed.</msg>
+<status status="PASS" starttime="20230723 23:54:43.812" endtime="20230723 23:54:43.827"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${planDetails}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230723 23:54:43.845" level="INFO">Element '//div[@class='row']//div[@class='small-12 medium-5 columns']' is displayed.</msg>
+<status status="PASS" starttime="20230723 23:54:43.827" endtime="20230723 23:54:43.845"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${restartYourPlan_Button}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230723 23:54:43.860" level="INFO">Element '//div[@id='renew_plan_cta_section']/div/div[3]/a' is displayed.</msg>
+<status status="PASS" starttime="20230723 23:54:43.845" endtime="20230723 23:54:43.860"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${changePlan_Button}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230723 23:54:43.876" level="INFO">Element '//a[@id='change_plan_btn']' is displayed.</msg>
+<status status="PASS" starttime="20230723 23:54:43.861" endtime="20230723 23:54:43.876"/>
+</kw>
+<doc>This covers how the User goes to Plan Details</doc>
+<status status="PASS" starttime="20230723 23:54:09.322" endtime="20230723 23:54:43.877"/>
+</test>
+<test id="s1-t4" name="User should be able to View Usage History and Select &quot;Yesterday&quot; as Time timePeriod_Value" line="50">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${usageHistory_link}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230723 23:54:43.897" level="INFO">Element '//a[text()='Usage history']' is displayed.</msg>
+<status status="PASS" starttime="20230723 23:54:43.877" endtime="20230723 23:54:43.897"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${usageHistory_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230723 23:54:43.898" level="INFO">Clicking element '//a[text()='Usage history']'.</msg>
+<status status="PASS" starttime="20230723 23:54:43.897" endtime="20230723 23:54:43.958"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${usageHistory_url}</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20230723 23:54:43.958" endtime="20230723 23:55:09.465"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${selectATimePeriod_Dropdown}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230723 23:55:09.466" endtime="20230723 23:55:09.500"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${selectATimePeriod_Dropdown}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230723 23:55:09.515" level="INFO">Element '//select[@id='my_amaysim2_usage_filter_search_type']' is displayed.</msg>
+<status status="PASS" starttime="20230723 23:55:09.500" endtime="20230723 23:55:09.515"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${selectATimePeriod_Dropdown}</arg>
+<arg>${timePeriod_Value}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20230723 23:55:09.516" level="INFO">Selecting options from selection list '//select[@id='my_amaysim2_usage_filter_search_type']' by value yesterday.</msg>
+<status status="PASS" starttime="20230723 23:55:09.515" endtime="20230723 23:55:09.608"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${search_Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230723 23:55:09.609" level="INFO">Clicking element '//input[@name='commit']'.</msg>
+<status status="PASS" starttime="20230723 23:55:09.609" endtime="20230723 23:55:09.698"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${loading_logo}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<msg timestamp="20230723 23:55:16.390" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<status status="PASS" starttime="20230723 23:55:09.698" endtime="20230723 23:55:16.622"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${searchResult_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230723 23:55:16.623" endtime="20230723 23:55:16.638"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${searchResult_locator}</arg>
+<arg>expected=${searchResult_text}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230723 23:55:16.640" level="INFO">Verifying element '//div[@class='small-12 columns grey']' contains exact text 'There are no results found. Please refine your search and try again.'.</msg>
+<status status="PASS" starttime="20230723 23:55:16.639" endtime="20230723 23:55:16.654"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${edit_Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230723 23:55:16.655" level="INFO">Clicking element '//a[@id='refine_search_link']'.</msg>
+<status status="PASS" starttime="20230723 23:55:16.654" endtime="20230723 23:55:16.713"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${selectATimePeriod_Dropdown}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230723 23:55:16.713" endtime="20230723 23:55:16.727"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${selectATimePeriod_Dropdown}</arg>
+<arg>${timePeriod_Value2}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20230723 23:55:16.728" level="INFO">Selecting options from selection list '//select[@id='my_amaysim2_usage_filter_search_type']' by value last_7_days.</msg>
+<status status="PASS" starttime="20230723 23:55:16.728" endtime="20230723 23:55:16.782"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${search_Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230723 23:55:16.782" level="INFO">Clicking element '//input[@name='commit']'.</msg>
+<status status="PASS" starttime="20230723 23:55:16.782" endtime="20230723 23:55:16.842"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${loading_logo}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20230723 23:55:16.843" endtime="20230723 23:55:18.523"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${searchResult_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230723 23:55:18.524" endtime="20230723 23:55:18.539"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${searchResult_locator}</arg>
+<arg>expected=${searchResult_text}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230723 23:55:18.541" level="INFO">Verifying element '//div[@class='small-12 columns grey']' contains exact text 'There are no results found. Please refine your search and try again.'.</msg>
+<status status="PASS" starttime="20230723 23:55:18.540" endtime="20230723 23:55:18.554"/>
+</kw>
+<doc>This covers how User goes to Usage History and select a time period. This also covers editing the Time period and selecting another time period.</doc>
+<status status="PASS" starttime="20230723 23:54:43.877" endtime="20230723 23:55:18.555"/>
+</test>
+<test id="s1-t5" name="User should be able to go to Settings" line="71">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${personalDetails_Section}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230723 23:55:18.578" level="INFO">Element '//a[text()='Personal details']' is displayed.</msg>
+<status status="PASS" starttime="20230723 23:55:18.557" endtime="20230723 23:55:18.578"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${personalDetails_Section}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230723 23:55:18.579" level="INFO">Clicking element '//a[text()='Personal details']'.</msg>
+<status status="PASS" starttime="20230723 23:55:18.578" endtime="20230723 23:55:18.639"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${personalDetails_url}</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20230723 23:55:18.639" endtime="20230723 23:55:42.602"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${loading_logo}</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20230723 23:55:42.603" endtime="20230723 23:55:42.677"/>
+</kw>
+<kw name="Handle Authentication Window" library="global_keywords">
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>${authenticationPopup_window}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20230723 23:55:42.678" level="INFO">Selecting frame '//iframe[@id='authorization-options-iframe']'.</msg>
+<status status="PASS" starttime="20230723 23:55:42.677" endtime="20230723 23:55:42.708"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230723 23:55:47.713" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230723 23:55:42.708" endtime="20230723 23:55:47.713"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${authenticationPopup_closeBtn}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230723 23:55:47.713" level="INFO">Clicking link ''.</msg>
+<status status="PASS" starttime="20230723 23:55:47.713" endtime="20230723 23:55:47.796"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20230723 23:55:47.796" endtime="20230723 23:55:47.802"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>${exitAuthentication_window}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20230723 23:55:47.802" level="INFO">Selecting frame '//iframe[@id='authorization-options-iframe']'.</msg>
+<status status="PASS" starttime="20230723 23:55:47.802" endtime="20230723 23:55:47.823"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${exitAuthentication_yes}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230723 23:55:47.823" level="INFO">Clicking button 'Yes'.</msg>
+<status status="PASS" starttime="20230723 23:55:47.823" endtime="20230723 23:55:47.902"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20230723 23:55:47.902" endtime="20230723 23:56:15.744"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230723 23:56:20.754" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230723 23:56:15.746" endtime="20230723 23:56:20.754"/>
+</kw>
+<status status="PASS" starttime="20230723 23:55:42.677" endtime="20230723 23:56:20.754"/>
+</kw>
+<doc>This covers how the User goes to Settings Section. Unfortunately this is having a problem. I just handle the Authenticatio Window</doc>
+<status status="PASS" starttime="20230723 23:55:18.556" endtime="20230723 23:56:20.754"/>
+</test>
+<test id="s1-t6" name="User should be able to Go back to dashboard" line="79">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${myDashboard_link}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230723 23:56:20.776" level="INFO">Element '//a[text()='My dashboard']' is displayed.</msg>
+<status status="PASS" starttime="20230723 23:56:20.755" endtime="20230723 23:56:20.776"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${myDashboard_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230723 23:56:20.777" level="INFO">Clicking element '//a[text()='My dashboard']'.</msg>
+<status status="PASS" starttime="20230723 23:56:20.776" endtime="20230723 23:56:20.842"/>
+</kw>
+<kw name="Wait Until Location Is" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" starttime="20230723 23:56:20.842" endtime="20230723 23:56:26.006"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${account_link}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230723 23:56:26.025" level="INFO">Element '//span[text()='account']' is displayed.</msg>
+<status status="PASS" starttime="20230723 23:56:26.006" endtime="20230723 23:56:26.025"/>
+</kw>
+<doc>This covers how the User goes back to My Dashboard.</doc>
+<status status="PASS" starttime="20230723 23:56:20.755" endtime="20230723 23:56:26.025"/>
+</test>
+<test id="s1-t7" name="User should be able to Logout" line="87">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${logout_link}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230723 23:56:26.049" level="INFO">Element '//a[text()='Logout']' is displayed.</msg>
+<status status="PASS" starttime="20230723 23:56:26.027" endtime="20230723 23:56:26.049"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${logout_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230723 23:56:26.050" level="INFO">Clicking element '//a[text()='Logout']'.</msg>
+<status status="PASS" starttime="20230723 23:56:26.049" endtime="20230723 23:56:28.495"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${username_textbox}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230723 23:56:28.495" endtime="20230723 23:56:28.523"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230723 23:56:28.523" endtime="20230723 23:56:34.728"/>
+</kw>
+<doc>This covers how the User logs out to Ameysim</doc>
+<status status="PASS" starttime="20230723 23:56:26.027" endtime="20230723 23:56:34.728"/>
+</test>
+<status status="PASS" starttime="20230723 23:51:57.708" endtime="20230723 23:56:34.729"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="7" fail="0" skip="0" id="s1" name="Test">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
